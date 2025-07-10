@@ -1,9 +1,11 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Put, UseInterceptors } from '@nestjs/common';
 import { CreateUserDTO } from './dto/create-user.dto';
 import { ReplaceUserDTO } from './dto/replace-user.dto';
 import { UpdateUserDTO } from './dto/replace-partial-user.dto';
 import { UserService } from './user.service';
+import { LogInterceptor } from './interceptor/log.interceptor';
 
+@UseInterceptors(LogInterceptor)
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
