@@ -6,7 +6,7 @@ import { UserIdCheckMiddleware } from 'src/middleware/user-id-check.middleware';
 
 @Module({
   controllers: [UserController],
-  exports: [],
+  exports: [UserService],
   imports: [PrismaModule],
   providers: [UserService],
 })

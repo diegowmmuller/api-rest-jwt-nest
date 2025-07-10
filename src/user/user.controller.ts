@@ -3,7 +3,7 @@ import { CreateUserDTO } from './dto/create-user.dto';
 import { ReplaceUserDTO } from './dto/replace-user.dto';
 import { UpdateUserDTO } from './dto/replace-partial-user.dto';
 import { UserService } from './user.service';
-import { LogInterceptor } from './interceptor/log.interceptor';
+import { LogInterceptor } from '../interceptor/log.interceptor';
 
 @UseInterceptors(LogInterceptor)
 @Controller('users')
