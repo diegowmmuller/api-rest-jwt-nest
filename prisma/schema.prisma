@@ -18,6 +18,7 @@ model User {
   name     String
   email    String  @unique
   password String
+  role     Int     @default(1)
 
    @@map("users") // nome da tabela no banco será "users"
 }
